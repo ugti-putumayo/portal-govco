@@ -1,0 +1,32 @@
+Crear components:
+php artisan make:component Modals/Publication/ModalExportPlantOfficial 
+
+Crear Export:
+php artisan make:export PlantOfficialExport --model=PlantOfficial
+
+Crear Import:
+php artisan make:import ContractorsImport --model=Contractor
+
+Instalar librerias para Exportar
+composer require maatwebsite/excel:^3.1.40
+
+Eliminar librerias
+composer remove maatwebsite/excel
+
+Ver datos de libreria
+composer show maatwebsite/excel
+
+Publicar libreria
+php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider"
+
+Crear controller
+php artisan make:controller UserModulePermissionController
+
+Crear model:
+php artisan make:model Submodule
+
+Activar modificación de paginado
+php artisan vendor:publish --tag=laravel-pagination
+
+Ejecutar Servidor
+php artisan serve --host=0.0.0.0 --port=8000

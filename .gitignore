@@ -1,0 +1,67 @@
+# =========================
+# Dependencias
+# =========================
+/node_modules
+/vendor
+
+# =========================
+# Entorno y configuración
+# =========================
+.env
+.env.*
+!.env.example
+
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+
+# =========================
+# Storage (excepto carpetas necesarias)
+# =========================
+/public/storage
+/storage/*.key
+/storage/app/*
+/storage/framework/*
+/storage/logs/*
+!/storage/app/public
+!/storage/framework/.gitignore
+!/storage/logs/.gitignore
+
+# =========================
+# Cache y archivos temporales
+# =========================
+.phpunit.result.cache
+/public/hot
+/bootstrap/cache/*
+!/bootstrap/cache/.gitignore
+
+# =========================
+# Frontend build (Vite / Mix)
+# =========================
+/public/build
+/public/mix-manifest.json
+
+# =========================
+# Logs
+# =========================
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# IDEs y SO
+# =========================
+/.idea
+/.vscode
+.DS_Store
+Thumbs.db
+
+# =========================
+# Testing
+# =========================
+/coverage
+
+# =========================
+# Otros
+# =========================
+*.log

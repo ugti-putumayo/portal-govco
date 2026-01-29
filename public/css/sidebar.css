@@ -1,0 +1,50 @@
+.titulo-personalizado {
+    font-weight: bold;
+    color: #004884;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el contenedor */
+.container-ms {
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+/* Espaciado */
+.my-5 {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .container-ms p {
+        font-size: 1rem;
+    }
+
+    .container-ms {
+        padding: 20px;
+    }
+}
+
+.list-group-item {
+    font-size: 1rem;
+    color: #004884;
+}
+
+.list-group-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilos para el contenido principal */
+.container-ms {
+    background-color: #fff;
+}
