@@ -4,45 +4,37 @@
   </a>
 </p>
 
-<h1 align="center">Gobernación del Putumayo</h1>
+<h1 align="center">Sede Electrónica Putumayo</h1>
 
 <p align="center">
-  Sitio oficial: <a href="https://www.putumayo.gov.co/" target="_blank" rel="noopener">https://www.putumayo.gov.co/</a>
+  Plataforma digital oficial de la <strong>Gobernación del Putumayo</strong><br>
+  Sitio institucional: <a href="https://www.putumayo.gov.co/" target="_blank" rel="noopener">https://www.putumayo.gov.co/</a>
 </p>
 
 ---
 
 ## Descripción
 
-Este repositorio contiene el desarrollo de una aplicación web para la **Gobernación del Putumayo**, orientada a soportar procesos internos y/o servicios digitales institucionales.
+**Sede Electrónica Putumayo** es una plataforma institucional desarrollada para la **Gobernación del Putumayo**, orientada a la prestación de trámites y servicios digitales, acceso a información pública y soporte a procesos administrativos, conforme a los lineamientos de Gobierno Digital en Colombia.
 
 ---
 
 ## Datos de la entidad (oficial)
 
 **Entidad:** Gobernación del Putumayo  
-**Sede / Dirección:** Calle 8 # 7 - 40, Barrio Centro, Mocoa – Putumayo, Colombia  
+**Dirección:** Calle 8 # 7 - 40, Barrio Centro, Mocoa – Putumayo, Colombia  
 **Código Postal:** 860001  
 
-**Horario de atención (presencial y virtual):**  
-Lunes a Viernes: 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.
+**Horario de atención:**  
+Lunes a Viernes  
+8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.
 
-**Teléfono:**  
-- Mocoa: (608) 4201515  
-- Línea anticorrupción: (608) 4201515  
+**Teléfono:** (608) 4201515  
 
 **Correos:**  
 - contactenos@putumayo.gov.co  
 - notificaciones.judiciales@putumayo.gov.co  
 - controlintenrodegestion@putumayo.gov.co  
-
-Fuente: portal institucional.  
-
----
-
-## Misión (referencia institucional)
-
-Promover un auténtico desarrollo económico sostenible, armonizando las estrategias departamentales con las locales, nacionales e internacionales, bajo principios de transparencia, equidad, justicia social y conservación de la riqueza natural del Putumayo.  
 
 ---
 
@@ -56,14 +48,18 @@ Promover un auténtico desarrollo económico sostenible, armonizando las estrate
 
 ## Instalación (Laravel)
 
-> **Requisitos mínimos sugeridos**
-- PHP (según versión del proyecto)
+> **Requisitos**
+- PHP
 - Composer
-- Node.js + npm (si aplica)
-- Motor de base de datos configurado
+- MySQL
+- Node.js + npm
 
-### 1) Clonar e instalar dependencias
+### Instalación y ejecución local
+
 ```bash
-git clone <URL_DEL_REPO>
+git clone <URL_DEL_REPOSITORIO>
 cd <CARPETA_DEL_PROYECTO>
 composer install
+cp .env.example .env
+php artisan key:generate
+php artisan serve
