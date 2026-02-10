@@ -137,21 +137,55 @@ input:focus, select:focus, textarea:focus {
 }
 
 body.high-contrast {
-  background-color: #000;
-  color: #fff;
+    --govco-primary-color: #FFFFFF;
+    --govco-secondary-color: #000000;
+    --govco-tertiary-color: #FFFFFF;
+    --govco-white-color: #000000;
+    --govco-gray-color: #000000;
+    --govco-border-color: #FFFFFF;
+    --govco-accent-color: #FFFF00;
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
 }
 
-body.high-contrast a {
-  color: #0ff;
-}
-
-body.high-contrast h1,
-body.high-contrast h2,
+body.high-contrast p, 
+body.high-contrast a, 
+body.high-contrast span, 
+body.high-contrast h1, 
+body.high-contrast h2, 
 body.high-contrast h3,
 body.high-contrast h4,
 body.high-contrast h5,
-body.high-contrast h6 {
-  color: #fff;
+body.high-contrast h6,
+body.high-contrast label {
+    color: var(--govco-tertiary-color) !important;
+}
+
+body.high-contrast input, 
+body.high-contrast select, 
+body.high-contrast textarea {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+body.high-contrast .icon, 
+body.high-contrast .btn-accessibility img,
+body.high-contrast .tramite-icon img {
+    filter: brightness(0) invert(1) !important;
+}
+
+body.high-contrast .logo img,
+body.high-contrast #slider-container img {
+    filter: none !important;
+}
+
+body.high-contrast .btn-floating,
+body.high-contrast .btn-floating-file,
+body.high-contrast .btn-floating-download {
+    background-color: #FFFF00;
+    color: #000;
+    border: 2px solid #000;
 }
 
 body.high-contrast button {
@@ -189,7 +223,6 @@ body.high-contrast .card-header {
   max-width: 100%;
 }
 
-/* Asegurar responsividad en pantallas más pequeñas */
 @media (max-width: 1200px) {
   .public-layout .container-centered {
       margin-left: 3rem;
@@ -204,7 +237,6 @@ body.high-contrast .card-header {
   }
 }
 
-/* Si deseas quitar los márgenes en pantallas muy pequeñas */
 @media (max-width: 576px) {
   .public-layout .container-centered {
       margin-left: 0.5rem;
@@ -274,10 +306,10 @@ body.high-contrast .card-header {
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  max-width: 500px; /* Puedes ajustar si lo necesitas más ancho */
+  max-width: 500px;
   width: 100%;
-  max-height: 90vh; /* 👈 altura máxima relativa a la ventana */
-  overflow-y: auto; /* 👈 permite desplazarse si se pasa la altura */
+  max-height: 90vh;
+  overflow-y: auto;
   text-align: center;
   position: relative;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -307,7 +339,7 @@ body.high-contrast .card-header {
   font-size: 16px;
 }
 
-/* Botón de Guardar (Aplicado a Todos los Modales) */
+/* Botón de Guardar*/
 .btn-submit {
   background: var(--govco-primary-color);
   color: white;
@@ -636,7 +668,7 @@ body.high-contrast .card-header {
   gap: 12px;
   align-items: center;
   flex-wrap: wrap;
-  margin-left: auto;            /* empuja a la derecha */
+  margin-left: auto;
 }
 
 /* contenedor tipo card, sombra ligera y radio suave */
@@ -668,7 +700,6 @@ body.high-contrast .card-header {
 
 .search-box::placeholder { color: rgba(0,0,0,.45); }
 
-/* hover: solo refuerzo leve del borde, nada de “brillos” */
 .filter-select:hover,
 .search-box:hover {
   box-shadow:
@@ -676,16 +707,14 @@ body.high-contrast .card-header {
     0 2px 6px rgba(0,0,0,.06);
 }
 
-/* focus: anillo sutil azul y sin saltos visuales */
 .filter-select:focus,
 .search-box:focus {
   outline: none;
   box-shadow:
-    inset 0 0 0 2px rgba(51,102,204,.28), /* ring azul discreto */
+    inset 0 0 0 2px rgba(51,102,204,.28),
     0 2px 8px rgba(0,0,0,.08);
 }
 
-/* botón: blanco, borde sutil, sin relleno azul; hover con leve tinte */
 .search-btn {
   height: 38px;
   padding: 0 12px;
@@ -706,7 +735,7 @@ body.high-contrast .card-header {
 }
 
 .search-btn:hover {
-  background: rgba(51,102,204,.05);    /* tinte muy leve */
+  background: rgba(51,102,204,.05);
   box-shadow:
     inset 0 0 0 1px rgba(51,102,204,.25),
     0 2px 8px rgba(0,0,0,.08);
@@ -756,7 +785,7 @@ body.high-contrast .card-header {
   font-weight: 700;
   font-family: var(--govco-font-primary);
   color: var(--govco-white-color) !important;
-  line-height: 1;                        /* evita desalinear con ícono */
+  line-height: 1;
   white-space: nowrap;
 }
 
@@ -811,7 +840,7 @@ body.high-contrast .card-header {
 .video-embed {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 */
+    padding-top: 56.25%;
     background: #000;
     border-radius: var(--govco-border-radius, 8px);
     overflow: hidden;

@@ -10,7 +10,6 @@
             @if($publications->isNotEmpty())
                 @foreach($publications as $call)
                     @php
-                        // Lógica simple de texto
                         $fullTitle = $call->title ?? 'Sin título';
                         $limit = 90;
                         $shortTitle = \Illuminate\Support\Str::limit($fullTitle, $limit, '...');
@@ -51,7 +50,7 @@
                     </div>
                 @endforeach
             @else
-                <p class="text-center w-100">No hay convocatorias disponibles.</p>
+                <p class="text-center w-100 no-calls-msg">No hay convocatorias disponibles.</p>
             @endif
         </div>
 
@@ -77,13 +76,13 @@ function scrollCarousel(direction) {
     max-width: 1240px;
     margin: 2rem auto;
     padding: 0 1rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--govco-font-primary), sans-serif;
     position: relative;
 }
 
 .section-title {
     text-align: center;
-    color: #004884;
+    color: var(--govco-secondary-color);
     font-weight: 800;
     font-size: 2rem;
     margin-bottom: 2rem;
@@ -115,11 +114,11 @@ function scrollCarousel(direction) {
 }
 
 .doc-card {
-    background: #fff;
+    background: var(--govco-white-color);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    border: 1px solid #e5e5e5;
+    box-shadow: var(--govco-box-shadow);
+    border: 1px solid var(--govco-gray-color);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -133,7 +132,7 @@ function scrollCarousel(direction) {
 }
 
 .card-header-blue {
-    background: linear-gradient(135deg, #1f5f9e 0%, #004884 100%);
+    background: var(--govco-secondary-color);
     height: 140px;
     position: relative;
     display: flex;
@@ -152,8 +151,8 @@ function scrollCarousel(direction) {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: #fff;
-    color: #004884;
+    background: var(--govco-white-color);
+    color: var(--govco-secondary-color);
     font-size: 0.75rem;
     font-weight: 700;
     padding: 4px 12px;
@@ -167,7 +166,7 @@ function scrollCarousel(direction) {
 
 .card-title {
     font-size: 1rem;
-    color: #333;
+    color: var(--govco-tertiary-color);
     font-weight: 700;
     line-height: 1.4;
     margin-bottom: 1rem;
@@ -175,35 +174,33 @@ function scrollCarousel(direction) {
 
 .card-dates {
     font-size: 0.85rem;
-    color: #666;
+    color: var(--govco-border-color);
     margin-top: 0.5rem;
 }
 
-/* Footer */
 .card-footer {
     padding: 1rem 1.5rem;
-    border-top: 1px solid #f0f0f0;
+    border-top: 1px solid var(--govco-gray-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .link-action {
-    color: #3366CC;
+    color: var(--govco-primary-color);
     font-weight: 700;
     text-decoration: none;
     font-size: 0.9rem;
 }
 
 .download-icon {
-    color: #888;
+    color: var(--govco-border-color);
     transition: color 0.2s;
 }
 .download-icon:hover {
-    color: #3366CC;
+    color: var(--govco-primary-color);
 }
 
-/* BOTONES DE NAVEGACIÓN */
 .nav-btn {
     position: absolute;
     top: 50%;
@@ -211,14 +208,14 @@ function scrollCarousel(direction) {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background: #fff;
-    border: 1px solid #ddd;
+    background: var(--govco-white-color);
+    border: 1px solid var(--govco-border-color);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     cursor: pointer;
     z-index: 10;
     font-size: 2rem;
     line-height: 0;
-    color: #004884;
+    color: var(--govco-secondary-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -227,17 +224,56 @@ function scrollCarousel(direction) {
 }
 
 .nav-btn:hover {
-    background: #004884;
-    color: #fff;
-    border-color: #004884;
+    background: var(--govco-secondary-color);
+    color: var(--govco-white-color);
+    border-color: var(--govco-secondary-color);
 }
 
-.nav-btn.prev {
-    left: -20px;
+.nav-btn.prev { left: -20px; }
+.nav-btn.next { right: -20px; }
+
+body.high-contrast .no-calls-msg {
+    color: #FFF !important;
 }
 
-.nav-btn.next {
-    right: -20px;
+body.high-contrast .doc-card {
+    background: #000 !important;
+    border: 2px solid #FFF !important;
+}
+
+body.high-contrast .card-header-blue {
+    background: #000 !important;
+    border-bottom: 1px solid #FFF;
+}
+
+body.high-contrast .date-badge {
+    background: #FFF !important;
+    color: #000 !important;
+}
+
+body.high-contrast .card-title, 
+body.high-contrast .card-dates,
+body.high-contrast .link-action {
+    color: #FFF !important;
+}
+
+body.high-contrast .card-footer {
+    border-top: 1px solid #FFF;
+}
+
+body.high-contrast .download-icon {
+    color: #FFF !important;
+}
+
+body.high-contrast .nav-btn {
+    background: #000 !important;
+    color: #FFF !important;
+    border: 2px solid #FFF !important;
+}
+
+body.high-contrast .nav-btn:hover {
+    background: #FFF !important;
+    color: #000 !important;
 }
 
 @media(max-width: 768px) {

@@ -1,7 +1,6 @@
 <header class="navbar-container">
     @php
         $currentLocale = app()->getLocale();
-        // Definición de idiomas
         $languages = [
             'es' => ['code' => 'ES', 'name' => 'Español'],
             'en' => ['code' => 'EN', 'name' => 'English'],
@@ -98,12 +97,10 @@
 </header>
 
 <script>
-// FUNCIÓN PARA EL IDIOMA (AGREGADA)
 function toggleLangMenu() {
     document.getElementById('lang-menu').classList.toggle('show');
 }
 
-// LOGICA DE TU MENÚ RESPONSIVO (MANTENIDA)
 document.addEventListener('DOMContentLoaded', function() {
     const menuItems = document.querySelectorAll('.navbar-bottom .menu-item, .navbar-bottom .submenu-item');
 
@@ -127,16 +124,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // EVENT LISTENER COMBINADO (IDIOMA + MENÚ MOVIL)
     document.addEventListener('click', function(event) {
-        // Cierre del menú móvil
         if (!event.target.closest('.navbar-bottom')) {
             document.querySelectorAll('.navbar-bottom .is-open').forEach(item => {
                 item.classList.remove('is-open');
             });
         }
         
-        // Cierre del menú de idioma (LÓGICA CORREGIDA CON CLOSEST)
         if (!event.target.closest('.lang-btn')) {
             var dropdowns = document.getElementsByClassName("lang-menu");
             for (var i = 0; i < dropdowns.length; i++) {
@@ -151,8 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <style scoped>
-/* VARIABLES (Mantengo las tuyas, asegúrate de que estén en tu CSS global) */
-
 .navbar-container {
     top: 0;
     width: 100%;
@@ -169,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 2rem;
-    height: 45px; /* Altura controlada */
+    height: 45px;
 }
 
 /* Arreglo del logo enorme */
@@ -308,7 +300,8 @@ document.addEventListener('DOMContentLoaded', function() {
 .search-bar {
     display: flex;
     align-items: center;
-    border: 1px solid var(--govco-gray-color);
+    border: 1px solid var(--govco-border-color);
+    background-color: var(--govco-white-color);
     border-radius: 4px;
     padding: 0.3rem 0.5rem;
 }
@@ -318,6 +311,8 @@ document.addEventListener('DOMContentLoaded', function() {
     outline: none;
     font-size: 0.9rem;
     padding: 0.3rem;
+    background-color: transparent;
+    color: var(--govco-tertiary-color);
 }
 
 .search-bar button {
@@ -378,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .menu-item > a {
-    color: #000;
+    color: var(--govco-tertiary-color);
     text-decoration: none;
     font-weight: 500;
     font-family: var(--govco-font-primary);
@@ -390,6 +385,11 @@ document.addEventListener('DOMContentLoaded', function() {
     height: 100%;
     width: 100%;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submenu a, .subsubmenu a {
+    color: var(--govco-tertiary-color);
+    background-color: var(--govco-gray-menu);
 }
 
 .menu-item:has(.submenu) > a::after,
@@ -484,6 +484,99 @@ document.addEventListener('DOMContentLoaded', function() {
     border: 2px solid var(--govco-success-color);
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+/* --- NAVBAR ALTO CONTRASTE --- */
+body.high-contrast .navbar-container {
+    border-bottom: 1px solid #fff;
+}
+
+/* Forzar visibilidad en los botones con fondos fijos */
+body.high-contrast .portal-historico__btn {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 2px solid #000;
+}
+
+body.high-contrast .lang-btn {
+    border-color: #fff !important;
+    background-color: #000 !important;
+}
+
+/* Corregir el menú de idiomas que es blanco fijo */
+body.high-contrast .lang-menu {
+    background-color: #000 !important;
+    border: 1px solid #fff !important;
+}
+
+body.high-contrast .lang-menu li a {
+    color: #fff !important;
+}
+
+body.high-contrast .lang-menu li a:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+/* Input de búsqueda */
+body.high-contrast .search-bar {
+    border-color: #fff !important;
+    background-color: #000 !important;
+}
+
+body.high-contrast .search-bar input {
+    color: #fff !important;
+}
+
+/* Menu de navegación inferior */
+body.high-contrast .navbar-bottom {
+    background-color: #000 !important;
+    border-bottom: 1px solid #fff;
+}
+
+body.high-contrast .menu-item > a {
+    color: #fff !important;
+}
+
+body.high-contrast .menu-item:hover {
+    background-color: #fff !important;
+}
+
+body.high-contrast .menu-item:hover > a {
+    color: #000 !important;
+}
+
+/* Submenús en contraste */
+body.high-contrast .submenu, 
+body.high-contrast .subsubmenu {
+    background-color: #000 !important;
+    border: 1px solid #fff !important;
+}
+
+body.high-contrast .submenu a, 
+body.high-contrast .subsubmenu a {
+    color: #fff !important;
+    background-color: #000 !important;
+}
+
+body.high-contrast .submenu a:hover, 
+body.high-contrast .subsubmenu a:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+/* Inversión de logos en el Navbar si son oscuros */
+body.high-contrast .navbar-top .govco-logo img,
+body.high-contrast .navbar .logo img {
+    filter: brightness(0) invert(1);
+}
+
+body.high-contrast .navbar .logo img {
+    filter: brightness(0) invert(1);
+}
+
+body.high-contrast .navbar .logo img {
+    filter: drop-shadow(0 0 2px white);
 }
 
 /* RESPONSIVE */

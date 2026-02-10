@@ -218,6 +218,7 @@ class ContentPageController extends Controller
             "{$prefix}-promoting-culture-selfcontrol" => 'Fomento de la Cultura de Autocontrol',
             "{$prefix}-improvement-plans"             => 'Planes de Mejoramiento',
             "{$prefix}-bulletin"                      => 'Boletines',
+            "{$prefix}-independent-evaluation-report" => 'Informe de Evaluación Independiente',
         ];
 
         $tabs = ContentPage::with(['items' => fn($q) => $q->orderBy('ordering')])

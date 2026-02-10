@@ -37,7 +37,17 @@ class TransparenciaController extends Controller
 
     public function planAction()
     {
-        return view('public.transparency.planning-budgeting-reporting.plan-action.plan-action');
+        $page = ContentPage::with([
+            'items' => fn ($q) => $q->orderBy('ordering')
+        ])
+            ->active()
+            ->where('slug', 'plan-action')
+            ->firstOrFail();
+
+        return view('public.transparency.planning-budgeting-reporting.plan-action.plan-action', [
+            'page'  => $page,
+            'items' => $page->items,
+        ]);
     }
 
     public function fiscalFramework(?string $slug = 'fiscal-framework')
@@ -148,5 +158,11 @@ class TransparenciaController extends Controller
     public function securityPrivacyPlan()
     {
         return $this->showPlan('information-security-privacy-plan');
+    }
+
+    // 14. Plan de acción
+    public function declarationPETP()
+    {
+        return $this->showPlan('declaration-ptep');
     }
 }

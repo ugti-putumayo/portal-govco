@@ -145,6 +145,12 @@ window.addEventListener('load', () => {
   width: 100%;
   height: 100%;
 }
+
+body.high-contrast .slide img {
+    filter: grayscale(1) contrast(1.2) !important;
+    opacity: 0.8;
+}
+
 .slides {
   display: flex;
   width: 100%;

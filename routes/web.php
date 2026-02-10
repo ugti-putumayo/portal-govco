@@ -198,6 +198,8 @@ Route::prefix('plan-action')->name('plan_action.')->group(function () {
     Route::get('/security-privacy-risk-treatment', [TransparenciaController::class, 'riskTreatmentPlan'])->name('risk_treatment');
     // 12. Seguridad y Privacidad (Information Security and Privacy Plan)
     Route::get('/information-security-privacy', [TransparenciaController::class, 'securityPrivacyPlan'])->name('security_privacy');
+    // 13. Declaración PETP
+    Route::get('/declaration-ptep', [TransparenciaController::class, 'declarationPETP'])->name('declaration_ptep');
 });
 Route::get('/invesment-projects', [WebInformationController::class, 'index'])->name('invesment-projects'); // PENDING
 Route::get('/splice-reports', [WebInformationController::class, 'index'])->name('splice-reports'); // PENDING

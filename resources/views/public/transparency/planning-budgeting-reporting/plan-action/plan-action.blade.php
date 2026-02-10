@@ -1,4 +1,4 @@
-@extends('transparencia.shared.sidebar')
+@extends('public.transparency.shared.sidebar')
 
 @section('sidebar')
     @include('partials.sidebar', ['secciones' => $secciones])
@@ -6,46 +6,71 @@
 
 @section('main-content')
 <div class="container py-4 govco-override-container">
-    <h1 class="mb-4">Plan de Acción</h1>
+    <h1 class="mb-2">{{ $page->title ?? 'Plan de Acción' }}</h1>
 
-    <p>
-        El <strong>Plan de Acción</strong> integra los objetivos y estrategias institucionales programados para la vigencia actual. 
-        Su publicación permite a la ciudadanía realizar seguimiento al cumplimiento de las metas propuestas por la entidad, 
-        garantizando el principio de publicidad y transparencia.
-    </p>
+    @if(!empty($page->description))
+        <p class="mb-4">{!! $page->description !!}</p>
+    @else
+        <p>
+            El <strong>Plan de Acción</strong> integra los objetivos y estrategias institucionales programados para la vigencia actual.
+            Su publicación permite a la ciudadanía realizar seguimiento al cumplimiento de las metas propuestas por la entidad,
+            garantizando el principio de publicidad y transparencia.
+        </p>
+    @endif
 
-    {{-- Tabla --}}
-    <table class="table table-bordered mt-4">
-        <thead class="govco-table-header">
-            <tr>
-                <th>Título</th>
-                <th>Descripción</th>
-                <th>Vigencia</th>
-                <th class="text-center">Documento</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Declaración PTEP DGR 2025</td>
-                <td>Declaración de la Gobernación del Putumayo. Construyendo un futuro de Transparencia y Ética en el Putumayo.</td>
-                <td>2025</td>
-                <td class="text-center">
-                    <a href="https://putumayo.gov.co/storage/app/public/transparency/ptep/Declaracion-PTEP-DGR-2025-258.pdf" 
-                       target="_blank" 
-                       class="btn btn-sm btn-govco-custom">
-                       <i class="fas fa-file-pdf"></i> Ver PDF
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    @php
+        $grouped = ($items ?? collect())
+            ->filter(fn ($i) => !empty($i->title))
+            ->groupBy(fn ($i) => optional($i->created_at)->year ?? 'Sin fecha')
+            ->sortKeysDesc();
+    @endphp
 
-    {{-- NUEVA SECCIÓN: PLANES INSTITUCIONALES --}}
+    @foreach($grouped as $year => $yearItems)
+        <h2 class="mt-4 mb-2" style="border-bottom: 2px solid var(--govco-secondary-color); padding-bottom: 10px;">
+            {{ $year }}
+        </h2>
+
+        <table class="table table-bordered mt-3 align-middle">
+            <thead class="govco-table-header">
+                <tr>
+                    <th>Título</th>
+                    <th class="text-center">Documento</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($yearItems as $item)
+                    <tr>
+                        <td>{{ $item->title }}</td>
+                        <td class="text-center">
+                            @if(!empty($item->document))
+                                <a href="{{ asset('storage/'.$item->document) }}"
+                                   target="_blank"
+                                   class="btn-ver-pdf">
+                                   Ver
+                                </a>
+                            @else
+                                —
+                            @endif
+                        </td>
+                        <td>
+                            @if(!empty(trim(strip_tags((string)$item->description))))
+                                {!! $item->description !!}
+                            @else
+                                —
+                            @endif
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    @endforeach
+
     <div class="mt-5 mb-5 govco-plan-list">
         <h2 style="border-bottom: 2px solid var(--govco-secondary-color); padding-bottom: 10px; margin-bottom: 20px;">
             Planes Institucionales
         </h2>
-        
+
         <ol>
             <li><a href="{{ route('plan_action.institutional_archives') }}" class="plan-link-item">Plan Institucional de Archivos de la Entidad PINAR</a></li>
             <li><a href="{{ route('plan_action.transparency_plan') }}" class="plan-link-item">Plan de Transparencia</a></li>
@@ -60,21 +85,23 @@
             <li><a href="{{ route('plan_action.it_strategic') }}" class="plan-link-item">Plan Estratégico de Tecnologías de la Información y las Comunicaciones - PETI</a></li>
             <li><a href="{{ route('plan_action.risk_treatment') }}" class="plan-link-item">Plan de Tratamiento de Riesgos de Seguridad y Privacidad de la Información</a></li>
             <li><a href="{{ route('plan_action.security_privacy') }}" class="plan-link-item">Plan de Seguridad y Privacidad de la Información</a></li>
+            <li><a href="{{ route('plan_action.declaration_ptep') }}" class="plan-link-item">Declaración de la Gobernación del Putumayo. Construyendo un futuro de Transparencia y Ética en el Putumayo.</a></li>
         </ol>
     </div>
 
     <p class="mt-4 border-top pt-3">
-        Si tiene observaciones sobre nuestro Plan de Acción, puede enviarlas al correo institucional: 
+        Si tiene observaciones sobre nuestro Plan de Acción, puede enviarlas al correo institucional:
         <a href="mailto:contactenos@putumayo.gov.co" style="color: var(--govco-secondary-color); font-weight: bold;">contactenos@putumayo.gov.co</a>
     </p>
 </div>
+
 <style>
 .govco-override-container {
     font-family: 'Work Sans', sans-serif !important;
     color: var(--govco-tertiary-color) !important;
 }
 
-.govco-override-container h1, 
+.govco-override-container h1,
 .govco-override-container h2 {
     font-family: 'Montserrat', sans-serif !important;
     color: var(--govco-secondary-color) !important;
@@ -91,7 +118,7 @@
 }
 
 .plan-link-item {
-    color: var(--govco-secondary-color) !important; 
+    color: var(--govco-secondary-color) !important;
     text-decoration: none !important;
     font-weight: 500;
     transition: all 0.2s ease-in-out;
@@ -113,6 +140,7 @@
     color: var(--govco-secondary-color) !important;
     background: transparent;
 }
+
 .btn-govco-custom:hover {
     background-color: var(--govco-secondary-color) !important;
     color: #FFFFFF !important;

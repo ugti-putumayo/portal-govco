@@ -40,6 +40,9 @@
                 <button class="icg-tab" role="tab" data-panel="bulletin" aria-controls="panel-bulletin" aria-selected="false">
                     Boletines
                 </button>
+                <button class="icg-tab" role="tab" data-panel="evaluation" aria-controls="panel-evaluation" aria-selected="false">
+                    Informe de Evaluación Independiente
+                </button>
             </nav>
         </aside>
 
@@ -72,6 +75,11 @@
 
             {{-- Panel: Boletines --}}
             <section id="panel-bulletin" class="icg-panel" role="tabpanel" hidden data-slug="internal-management-control-bulletin" data-loaded="0">
+                <div class="icg-panel-body"></div>
+            </section>
+            
+            {{-- Panel: Evaluación --}}
+            <section id="panel-evaluation" class="icg-panel" role="tabpanel" hidden data-slug="internal-management-control-independent-evaluation-report" data-loaded="0">
                 <div class="icg-panel-body"></div>
             </section>
         </main>

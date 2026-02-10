@@ -1,234 +1,331 @@
-<footer class="footer-govco"> 
-    <div class="footer-top">
-        <div class="footer-column footer-column-logos">
-            <img src="/logos/logo_govco.png" alt="GOV.CO" class="footer-logo">
-            <img src="/logos/logo_vida.png" alt="Colombia Potencia de la Vida" class="footer-logo">
-            <img src="/logos/logo_co.svg" alt="CO Colombia" class="footer-logo-small">
-        </div>
+<footer class="footer-govco">
+    
+    <div class="footer-split-background">
+        
+        <div class="footer-card">
+            
+            <div class="card-header">
+                <div class="header-info">
+                    <h2 class="gov-title">Gobernación del Putumayo</h2>
+                    <h3 class="gov-subtitle">Palacio Departamental</h3>
+                </div>
+                <div class="header-logo">
+                    <img src="/logos/logo_gobernacion_ptyo.png" alt="Logo Gobernación" />
+                </div>
+            </div>
 
-        <div class="footer-column">
-            <h4>Portal Único del Estado Colombiano</h4>
-            <p><strong>Dirección:</strong> Calle 7 # 8 - 40 Barrio Centro</p>
-            <p><strong>Horarios de Atención:</strong></p>
-            <p>&bull; Atención Presencial: Lunes a Viernes de 8:00am a 12:00pm / 2:00pm a 6:00pm</p>
-            <p>&bull; Atención Canales Virtuales: Lunes a Viernes de 8:30 am a 4:30 pm.</p>
-            <p><strong>Código Postal:</strong> 860001</p>
-        </div>
+            <div class="card-body">
+                <p>Dirección: Calle 7 # 8 - 40 Barrio Centro, Mocoa, Putumayo, Colombia.</p>
+                <p>Código Postal: 860001</p>
+                <p>Lunes a Viernes de 8:00 a.m. a 12:00 m y 2:00 p.m. a 6:00 p.m.</p>
+                <p>Tel Palacio Departamental: (608) 4201515</p>
+                
+                <div class="contact-links">
+                    <p>Correo electrónico PQRSD: <a href="mailto:contactenos@putumayo.gov.co">contactenos@putumayo.gov.co</a></p>
+                    <p>Notificaciones Judiciales: <a href="mailto:notificaciones.judiciales@putumayo.gov.co">notificaciones.judiciales@putumayo.gov.co</a></p>
+                </div>
 
-        <div class="footer-column">
-            <h4>Contacto</h4>
-            <p><strong>Teléfono:</strong></p>
-            <p>&bull; Nacional: 01 8000 95 2525</p>
-            <p>&bull; Bogotá: +57 601 390 7950</p>
-            <p>&bull; Línea Anticorrupción: 01 8000 91 2667</p>
-            <p><strong>Correo Institucional:</strong> contactenos@putumayo.gov.co</p>
-            <a href="/contact">Solicita una llamada</a> | <a href="/web-call">Llamada web</a> | <a href="/chat">Hablemos en línea</a>
-        </div>
+                <div class="secondary-links">
+                    <p>Línea anticorrupción: <a href="mailto:transparencia@putumayo.gov.co">transparencia@putumayo.gov.co</a></p>
+                    <p>Canal: <a href="/denuncias" class="text-underline">Denuncias Anticorrupción</a></p>
+                </div>
 
-        <div class="footer-column">
-            <h4>Acerca del sitio</h4>
-            <a href="/sitemap">Mapa del sitio</a>
-            <a href="/privacy">Políticas de privacidad</a>
-            <a href="/copyright">Políticas de derechos de autor</a>
-            <a href="/terms">Términos y condiciones</a>
-            <h4>Ayudas de accesibilidad</h4>
-            <a href="/accessibility">Centro de relevo</a>
-            <div class="social-icons">
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Síguenos en Twitter</a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Síguenos en Facebook</a>
+                <a href="/headquarters" class="view-more">Ver más sedes</a>
+
+                <div class="stats-row">
+                    <span class="chart-icon">📊</span>
+                    <a href="/statistical-information-management" class="stats-link">Estadísticas de la Sede Electrónica</a>
+                </div>
+            </div>
+
+            <div class="card-socials">
+                <a href="https://www.facebook.com/gobernaciondelputumayo/?locale=es_LA" class="social-btn" target="_blank" rel="noopener noreferrer">
+                    <img src="/icons/facebook.svg" alt="FB"> Gobernación de Putumayo
+                </a>
+                <a href="https://www.youtube.com/playlist?list=UU1z-DVKIR_TJk1fMUDZx7Vw" class="social-btn" target="_blank" rel="noopener noreferrer">
+                    <img src="/icons/youtube.svg" alt="YT"> @gobernacionputumayo
+                </a>
+            </div>
+
+            <div class="card-footer-menu">
+                <a href="/contactenos">CONTÁCTENOS</a>
+                <a href="/pqrsd">PQRSD</a>
+                <a href="/mapa">MAPA DEL SITIO</a>
+                <a href="/encuesta">ENCUESTA DE USABILIDAD</a>
+                <a href="/politicas">POLÍTICAS</a>
+                <a href="/ayudanos">AYÚDANOS A MEJORAR</a>
             </div>
         </div>
     </div>
 
-    <div class="footer-bottom">
-        <p id="local-time"></p>
-        
-        <p>@2024 - Gobernacion de Putumayo</p>
-        <p>Unidad de Gestion de Tecnologia</p>
+    <div class="footer-gov-bar">
+        <div class="gov-bar-content">
+            <div class="logos-container">
+                <img src="/logos/logo_govco.png" alt="GOV.CO" class="logo-white">
+                <div class="divider"></div>
+                <img src="/logos/logo_co.svg" alt="CO Colombia" class="logo-color">
+            </div>
+            
+            <div class="footer-info-right">
+                <p class="copyright-text">@2024 - Gobernación de Putumayo</p>
+                <p class="copyright-text">Unidad de Gestión de Tecnología</p>
+                <p id="local-time" class="time-text"></p>
+            </div>
+        </div>
     </div>
+
 </footer>
 
 <script>
     function updateTime() {
-        const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'America/Bogota' };
+        const options = { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'America/Bogota' };
         const timeNow = new Intl.DateTimeFormat('es-CO', options).format(new Date());
-        document.getElementById('local-time').textContent = timeNow;
+        document.getElementById('local-time').textContent = "Hora legal: " + timeNow;
     }
-
     setInterval(updateTime, 1000);
     updateTime();
 </script>
 
 <style scoped>
-.footer-govco {
-    background-color: #004884; /* Azul fuerte */
-    color: #FFFFFF;
-    padding: 30px 0;
-    font-family: Arial, sans-serif;
+.footer-govco, .footer-govco * {
+    box-sizing: border-box;
+    font-family: var(--govco-font-primary);
 }
 
-.footer-top {
+.footer-govco {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-split-background {
+    width: 100%;
+    background: linear-gradient(
+        180deg, 
+        var(--govco-white-color) 120px, 
+        var(--govco-primary-color) 120px
+    );
+    padding: 0 20px 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-card {
+    background-color: var(--govco-white-color);
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 20px;
+    padding: 40px 50px;
+    box-shadow: 0 10px 40px rgba(0, 72, 132, 0.25);
+    position: relative;
+    z-index: 10;
+    margin-top: 20px;
+}
+
+.card-header {
+    background-color: transparent !important; 
+    border-bottom: none !important;
+    padding: 0 !important;
+    
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 0 40px;
-    border-bottom: 4px solid #003F72; /* Línea de separación */
+    margin-bottom: 25px;
 }
 
-.footer-column {
-    flex: 1;
-    max-width: 250px;
-    margin: 20px;
+.gov-title {
+    color: var(--govco-secondary-color);
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
 }
 
-.footer-column h4 {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #FFFFFF;
-    font-weight: bold;
-}
-
-.footer-column p,
-.footer-column a {
-    color: #FFFFFF;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-.footer-column a {
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
-.footer-column a:hover {
-    color: #FFCC00; /* Color de resalto amarillo */
-}
-
-/* Estilos para la columna de los logos */
-.footer-column-logos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-logo {
-    width: 120px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.footer-logo-small {
-    width: 80px;
-    height: auto;
-    margin-bottom: 0;
-}
-
-.social-icons a {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #004080; /* Azul oscuro */
-}
-
-.footer-bottom p {
-    font-size: 14px;
-    color: #FFFFFF;
+.gov-subtitle {
+    color: var(--govco-secondary-color);
+    font-size: 18px;
+    font-weight: 600;
     margin: 0;
 }
 
-/* Media Queries para el footer en pantallas pequeñas */
-@media (max-width: 768px) {
-    .footer-top {
-        flex-direction: column;
-        padding: 0 20px;
-    }
+.header-logo img {
+    height: 70px;
+    width: auto;
+}
 
-    .footer-column {
-        max-width: 100%;
-        margin: 10px 0;
+.card-body p, .card-body a {
+    color: var(--govco-tertiary-color);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+.card-body a {
+    color: var(--govco-secondary-color);
+    text-decoration: underline;
+}
+
+.contact-links, .secondary-links { 
+    margin: 15px 0; 
+}
+
+.text-underline { 
+    text-decoration: underline; 
+}
+
+.view-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.stats-row {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chart-icon { 
+    font-size: 20px; 
+}
+
+.stats-link {
+    font-weight: 700;
+    color: var(--govco-secondary-color) !important;
+    text-decoration: none !important;
+}
+
+.card-socials {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--govco-secondary-color);
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.social-btn img { 
+    width: 20px; 
+    height: 20px; 
+}
+
+.card-footer-menu {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.card-footer-menu a {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--govco-secondary-color);
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.footer-gov-bar {
+    color: var(--govco-white-color);
+    background-color: var(--govco-secondary-color);
+    padding: 15px 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+.gov-bar-content {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--govco-white-color) !important;
+}
+
+.logos-container { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+}
+
+.logo-white { 
+    height: 28px; 
+    filter: brightness(0) invert(1); 
+}
+
+.divider { 
+    width: 1px; 
+    height: 25px; 
+    background-color: var(--govco-white-color); 
+    opacity: 0.6; 
+}
+
+.logo-color { 
+    height: 28px; 
+}
+
+.footer-info-right {
+    text-align: right;
+    color: var(--govco-white-color) !important;
+}
+
+.copyright-text {
+    font-size: 12px;
+    margin: 2px 0;
+    color: var(--govco-white-color) !important;
+}
+
+.time-text {
+    font-size: 12px;
+    margin: 2px 0;
+    font-weight: 600;
+    color: var(--govco-white-color) !important;
+}
+
+@media (max-width: 768px) {
+    .footer-split-background {
+        background: linear-gradient(180deg, var(--govco-white-color) 60px, var(--govco-primary-color) 60px);
+        padding: 0 15px 40px 15px;
+    }
+    
+    .footer-card { 
+        padding: 30px 20px; 
+        text-align: center; 
+    }
+    
+    .card-header { 
+        flex-direction: column-reverse; 
+        align-items: center; 
+        gap: 20px; 
+    }
+    
+    .card-body { 
+        text-align: center; 
+    }
+    
+    .card-socials, .card-footer-menu { 
+        justify-content: center; 
+    }
+    
+    .gov-bar-content { 
+        flex-direction: column; 
+        gap: 15px; 
         text-align: center;
     }
 
-    .footer-column-logos {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .footer-logo {
-        width: 80px;
-        margin-right: 10px;
-    }
-
-    .social-icons {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .social-icons a {
-        margin: 0 10px;
-    }
-
-    .footer-bottom {
-        font-size: 12px;
-        padding: 10px 20px;
-    }
-}
-
-/* Estilos para el modo de alto contraste */
-body.high-contrast .footer-govco {
-    background-color: #000; /* Fondo negro */
-    color: #fff;            /* Texto blanco */
-}
-
-body.high-contrast .footer-govco a {
-    color: #0ff;            /* Enlaces en cian */
-}
-
-body.high-contrast .footer-govco a:hover {
-    color: #fff;            /* Enlaces en blanco al pasar el cursor */
-}
-
-body.high-contrast .footer-column h4 {
-    color: #fff;            /* Encabezados en blanco */
-}
-
-body.high-contrast .footer-column p {
-    color: #fff;            /* Párrafos en blanco */
-}
-
-body.high-contrast .footer-logo {
-    filter: invert(1);      /* Invertir colores de los logos */
-}
-
-body.high-contrast .footer-bottom {
-    border-top: 1px solid #fff; /* Borde superior en blanco */
-}
-
-body.high-contrast .footer-bottom p {
-    color: #fff;            /* Texto en blanco */
-}
-
-body.high-contrast .social-icons a {
-    color: #0ff;            /* Iconos de redes sociales en cian */
-}
-
-body.high-contrast .social-icons a:hover {
-    color: #fff;            /* Iconos en blanco al pasar el cursor */
-}
-
-body.high-contrast .social-icons a img {
-    filter: invert(1);      /* Invertir colores de los iconos si son imágenes */
-}
-
-/* Media Queries para el modo de alto contraste en pantallas pequeñas */
-@media (max-width: 768px) {
-    body.high-contrast .footer-top {
-        /* Mantiene los ajustes responsivos */
+    .footer-info-right {
+        text-align: center;
     }
 }
 </style>
